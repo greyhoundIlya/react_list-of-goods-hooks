@@ -20,7 +20,7 @@ export const goodsFromServer: string[] = [
 
 function getSortInfo(
   goods: string[],
-  options: { sortField: string; isRevesed: boolean },
+  options: { sortField: string; isReversed: boolean },
 ): string[] {
   let prepedGoods = [...goods];
 
@@ -37,7 +37,7 @@ function getSortInfo(
     });
   }
 
-  if (options.isRevesed) {
+  if (options.isReversed) {
     prepedGoods = prepedGoods.reverse();
   }
 
@@ -50,7 +50,7 @@ export const App: React.FC = () => {
 
   const start = getSortInfo(goodsFromServer, {
     sortField,
-    isRevesed: isReversed,
+    isReversed: isReversed,
   });
 
   const reset = () => {
